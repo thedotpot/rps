@@ -46,7 +46,7 @@ function game(playerSelection, computerSelection){
     }
 }
 
-game(playerSelection, computerSelection);
+
 
 let userInput = "You have entered " + playerSelection;
 let computerInput = "Computer has entered " + computerSelection;
