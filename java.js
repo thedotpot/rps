@@ -3,31 +3,44 @@ function computerPlay(){
     return randomArray[Math.floor(Math.random()*randomArray.length)];
 }
 
-let userInput = prompt("Choose your hand!");
+let playerSelection = prompt("Choose your hand!");
 
-function game(userInput){
-    computerPlay();
-    if (userInput === computerPlay()){
-        console.log('This is a tie!');
-    }else if (userInput === 'Rock'&& computerPlay()==='Paper'){
-        console.log("You lost :(");
-    }else if (userInput === 'Paper'&& computerPlay()==='Scissors'){
-        console.log("You have lost :(");
-    }else if (userInput === 'Scissors' && computerPlay()=== 'Rock'){
-        console.log("You have lost :(");
-    }else if (userInput === 'Rock'&& computerPlay()==='Scissors'){
-        console.log("YOU HAVE WON!");
-    }else if (userInput === 'Paper' && computerPlay()==='Rock'){
-        console.log("YOU HAVE WON!");
-    }else if (userInput === 'Scissors' && computerPlay()==='Paper'){
-        console.log("YOU HAVE WON!");
-    }else {
-        console.log("Please enter an appropriate value")
+computerSelection = computerPlay();
+
+
+ 
+function game(playerSelection, computerSelection){
+    if (playerSelection === 'Rock' && computerSelection === 'Scissors'){
+        console.log("You have won!");
+    } else if (playerSelection === 'Rock' && computerSelection === "Paper"){
+        console.log("You have lost");
+    }else if (playerSelection === 'Paper' && computerSelection === 'Rock'){
+        console.log("You have won!");
+    }else if (playerSelection === 'Paper' && computerSelection === 'Scissors'){
+        console.log("You have lost");
+    }else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
+        console.log("You have won!");
+    }else if (playerSelection === 'Scissors' && computerSelection === 'Rock'){
+        console.log("You have lost");
+    }else if (playerSelection === computerSelection){
+        console.log("It's a tie");
+    }else{
+        console.log("Please input a proper value");
     }
-    
-
 }
 
-game();
+game(playerSelection, computerSelection);
+
+let userInput = "You have entered " + playerSelection;
+let computerInput = "Computer has entered " + computerSelection;
+
+console.log(userInput);
+console.log(computerInput);
+
+
+
+
+
+
 
 
