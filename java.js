@@ -2,7 +2,7 @@ let playerScore = 0;
 let compScore = 0;
 
 function computerPlay(){
-    const array = ['rocks', 'paper', 'scissors'];
+    const array = ['rock', 'paper', 'scissors'];
     return array[Math.floor(Math.random()* array.length)];
 }
 
@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection){
 
 function loop(){
     for (let i = 0; i<5; i++){
-        const playerSelection = prompt("Choose rock, paper or scissors", "Rock, Paper, Scissors");
+        const playerSelection = prompt("Choose rock, paper or scissors", "Rock, Paper, Scissors").toLowerCase()
         const computerSelection= computerPlay()
         playRound(playerSelection, computerSelection);
         console.log("You: " + playerSelection);
@@ -58,6 +58,8 @@ function loop(){
     }else {
         return 'You have TIED!'
     }
+    
+   
 }
 
 function yourScore(){
